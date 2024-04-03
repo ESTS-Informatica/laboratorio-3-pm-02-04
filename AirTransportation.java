@@ -25,7 +25,7 @@ public class AirTransportation extends Transport {
   }
 
   public int getNumberOfContainers() {
-    return this.numberOfContainers;
+    return this.numberOfContainers; 
   }
 
   public void setNumberOfContainers(int numberOfContainers) {
