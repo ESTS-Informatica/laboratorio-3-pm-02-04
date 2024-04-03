@@ -42,4 +42,21 @@ public class AirTransportation extends Transport {
     // Override the base class method to set fees specific to AirTransportation
     return 0.04; // 4% fee for AirTransportation
   }
+  
+  @Override
+  public double getPriceWithFees() {
+    return super.getPriceWithFees() * (1.0 + 0.04); // 4% de honorários para transporte aéreo
+  }
+  
+  @Override
+public String toString() {
+  final StringBuilder sb = new StringBuilder(super.toString());
+
+  sb.append(String.format("%15s: %s\n", "Nome da Aeronave", getName()));
+  sb.append(String.format("%15s: %d\n", "Número de Contentores", getNumberOfContainers()));
+
+  return sb.toString();
+}
+
+
 }

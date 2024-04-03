@@ -31,4 +31,19 @@ public class GroundTransportation extends Transport {
     // Override the base class method to set fees specific to GroundTransportation
     return 0.03; // 3% fee for GroundTransportation
   }
+  
+  @Override
+  public double getPriceWithFees() {
+    return super.getPriceWithFees() * (1.0 + 0.03); // 3% de honorários para transporte terrestre
+  }
+  
+  @Override
+public String toString() {
+  final StringBuilder sb = new StringBuilder(super.toString());
+
+  sb.append(String.format("%15s: %s\n", "Matrícula", getLicensePlate()));
+
+  return sb.toString();
+}
+    
 }
