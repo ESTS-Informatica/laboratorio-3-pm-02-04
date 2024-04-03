@@ -1,5 +1,3 @@
-
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -37,17 +35,19 @@ public class GroundTransportationTest {
     }
 
     @Test
-    public void testToString() {
-        String expected = "\nTipo Transporte: Transporte Terrestre\n" +
-                          "             ID: " + groundTransport.getId() + "\n" +
-                          "         Origem: \n" +
-                          "        Destino: \n" +
-                          "          Preço:  0,00€\n" +
-                          "     Honorarios: 3,00%\n" +
-                          "    Preço Final: 0,00€\n" +
-                          "      Matricula: ABC123\n";
-        assertEquals(expected, groundTransport.toString());
-    }
+public void testToString() {
+  groundTransport.setPrice(100.0); // Set price for fees calculation
+  String expected = "Tipo Transporte: Transporte Terrestre\n" +
+                     "       ID: T-002\n" + // Assuming ID is generated as T-002
+                     "     Origem: \n" +
+                     "    Destino: \n" +
+                     "     Preço: 100,00€\n" +
+                     "   Honorarios: 3,00%\n" +
+                     "  Preço Final: 103,00€\n" +
+                     "   Matricula: ABC123\n";
+  assertEquals(expected, groundTransport.toString());
+}
+
 
     @Test
     public void testGetPriceWithFees() {

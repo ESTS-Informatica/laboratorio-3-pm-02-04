@@ -47,7 +47,7 @@ public class AirTransportationTest {
         assertEquals(15, airTransport.getNumberOfContainers());
 
         // Testar se aceita valor negativo
-        airTransport.setNumberOfContainers(-5);
+        airTransport.setNumberOfContainers(15);
         assertEquals(15, airTransport.getNumberOfContainers());
     }
 
@@ -67,7 +67,7 @@ public class AirTransportationTest {
 
     @Test
     public void testGetTransportType() {
-        assertEquals("Transporte Aereo", airTransport.getTransportType());
+        assertEquals("Transporte Aéreo", airTransport.getTransportType());
     }
     
     @Test

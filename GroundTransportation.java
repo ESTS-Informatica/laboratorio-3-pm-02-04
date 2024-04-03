@@ -39,11 +39,12 @@ public class GroundTransportation extends Transport {
   
   @Override
 public String toString() {
-  final StringBuilder sb = new StringBuilder(super.toString());
-
+  final StringBuilder sb = new StringBuilder();
+  sb.append("Tipo Transporte: ").append(getTransportType()).append("\n");
+  sb.append("ID: ").append(getId()).append("\n");
   sb.append(String.format("%15s: %s\n", "Matrícula", getLicensePlate()));
-
   return sb.toString();
 }
+
     
 }
